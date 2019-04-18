@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Log In
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="ion-padding">
+    The world is your oyster.
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  </div> -->
+  <ion-list no-lines>
+    
+  
+    <ion-item>
+       <ion-input round type="text" placeholder="Username" name="username" #username></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-input round type="password" placeholder="Password" name="password" #password></ion-input>
+    </ion-item>
+
+    <button ion-button round block (click)="signin()">Sign In</button>
+
+    <button ion-button round block (click)="signup()">Register</button>
+  </ion-list>
+</ion-content>
