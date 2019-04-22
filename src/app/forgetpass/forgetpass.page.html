@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Forget Password</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list nolist>
+
+    <form [formGroup]="forgetpassForm">
+        <ion-item>
+        <ion-input round type ="email" formControlName="forgetPass" pattern='^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$' placeholder="Enter e-mail" name="forgetPass"></ion-input>
+          <div style = "color: red; padding-top: 0.2 rem" *ngIf="forgetpassForm.get('forgetPass').invalid && forgetpassForm.get('forgetPass').dirty || forgetpassForm.get('forgetPass').touched">
+          
+            <div *ngIf="forgetpassForm.get('forgetPass').errors?.required">
+              Email is required
+
+            </div>
+          
+          </div> 
+          
+      </ion-item>
+    
+  
+
+
+  <br>
+
+  <button ion-button round block (click)="resetPass()" [disabled]=!forgetpassForm.valid>Reset Password</button>
+</form>
+</ion-list>
+</ion-content>

@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Registration</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list no-lines>
+  
+      <form [formGroup]="registrationForm">
+  
+      <ion-item>
+        
+        <ion-input round type="text" formControlName="fullname" minlength="4" placeholder="Username" name="fullname"></ion-input>
+  
+        <div style="color: red; padding-top: 0.2 rem" *ngIf="registrationForm.get('fullname').invalid && registrationForm.get('fullname').dirty || registrationForm.get('fullname').touched">
+          <div *ngIf="registrationForm.get('fullname').errors?.required">
+           Username is required
+          </div>
+  
+          <div *ngIf="registrationForm.get('fullname').errors?.minlength">   
+            Minimum length is 4
+          </div>
+  
+        </div>
+  
+      </ion-item>
+  
+      <ion-item>
+  
+        <ion-input round  type="text" formControlName="email" pattern = '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$' placeholder="Email" name="email" ></ion-input>
+  
+        
+        <div style="color: red; padding-top: 0.2 rem" *ngIf="registrationForm.get('email').invalid && registrationForm.get('email').dirty || registrationForm.get('email').touched">
+          <div *ngIf="registrationForm.get('email').errors?.required">
+            Email is required
+          </div>
+  
+       
+        </div>
+      </ion-item>
+  
+      <ion-item>
+  
+        <ion-input round  type="text" formControlName="mobile_num" minlength="11" maxlength="15" placeholder="Mobile Number" pattern='^[0-9]+$' name="mobile"></ion-input>
+  
+         <div style="color: red; padding-top: 0.2 rem" *ngIf="registrationForm.get('mobile_num').invalid && registrationForm.get('mobile_num').dirty || registrationForm.get('mobile_num').touched">
+            <div *ngIf="registrationForm.get('mobile_num').errors?.required">
+             Mobile number is required
+            </div>
+  
+            <div *ngIf="registrationForm.get('mobile_num').errors?.minlength">
+              Minimum length is 11
+            </div>
+  
+            <div *ngIf="registrationForm.get('mobile_num').errors?.maxlength">
+                Max length is 15
+              </div>
+              <div *ngIf="registrationForm.get('mobile_num').errors?.pattern">
+                  Only Numbers allowed
+                </div>
+         </div>
+  
+      </ion-item>
+  
+      <ion-item>
+  
+        <ion-input round type="password" formControlName="password" pattern= '^[a-zA-z0-9]+$' minlength="8" maxlength="16" placeholder="Password" name="password" ></ion-input>
+  
+  
+        <div style="color: red; padding-top: 0.2 rem" *ngIf="registrationForm.get('password').invalid && registrationForm.get('password').dirty || registrationForm.get('password').touched">
+            <div *ngIf="registrationForm.get('password').errors?.required">
+             Password is required
+            </div>
+  
+            <div *ngIf="registrationForm.get('password').errors?.minlength">
+              Minimum length is 8
+            </div>
+  
+            <div *ngIf="registrationForm.get('password').errors?.maxlength">
+                Maximum length is 16
+            </div>
+         </div>
+  
+      </ion-item>
+  
+     </form>
+  
+     
+    </ion-list>
+  
+  
+
+
+      <ion-col size="8">
+      <button ion-button round outline block (click)="Register()" [disabled]="!registrationForm.valid">Register</button>
+    
+    </ion-col>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <ion-col size= "2">
+     <button ion-button round outline block (click)="logIn()">Log In</button>
+    </ion-col>
+  </ion-content>
+  

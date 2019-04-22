@@ -7,23 +7,49 @@
 </ion-header>
 
 <ion-content>
-  <!-- <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div> -->
+
   <ion-list no-lines>
     
-  
+    <form [formGroup]="logInForm">
     <ion-item>
-       <ion-input round type="text" placeholder="Username" name="username" #username></ion-input>
-    </ion-item> 
+       <ion-input round type="text" formControlName="username" minlength = "4" placeholder="Username" name="username"></ion-input>
+       <div style="color: red; padding-top: 0.2rem" *ngIf="logInForm.get('username').invalid && logInForm.get('username').dirty || logInForm.get('username').touched">
+        <div *ngIf="logInForm.get('username').errors?.required">
+          Username is Required
+        </div>
+        <div *ngIf="logInForm.get('username').errors?.minlength">
+            Minimum length is 4
+        </div>
+        
+      </div>
+      </ion-item> 
 
     <ion-item>
-      <ion-input round type="password" placeholder="Password" name="password" #password></ion-input>
-    </ion-item>
-
-    <button ion-button round block (click)="signin()">Sign In</button>
-
-    <button ion-button round block (click)="signup()">Register</button>
+      <ion-input round type="password" formControlName="password" minlength= "8" pattern= '^[a-zA-z0-9]+$' placeholder="Password" name="password" ></ion-input>
+      <div *ngIf="logInForm.get('password').invalid && (logInForm.get('password').dirty ||
+      logInForm.get('password').touched)">
+                  <div *ngIf="logInForm.get('password').errors.required">
+                    Password is required
+                  </div>
+                  <div *ngIf="logInForm.get('password').errors.minlength">
+                    Password must be at least 8 characters long.
+                  </div>
+                  <div *ngIf="logInForm.get('password').errors.pattern">
+                      Password Must contains the one number, one lowercase and one uppercase letter
+                  </div>
+                </div> 
+      </ion-item>
+<ion-row> 
+  <ion-col size="6">  
+   <button ion-button round block (click)="signIn()" [disabled]="!logInForm.valid">Sign In</button>
+  </ion-col>
+  <ion-col size="6">  
+      <button ion-button round block  (click)="forgetPass()">Forget Password?</button>
+     </ion-col>
+  </ion-row>
+ 
+</form>
+    <br>
+    <button ion-button round block (click)="signUp()">Register</button>
   </ion-list>
 </ion-content>
