@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
-import { MbscModule } from '@mobiscroll/angular-lite';
+
 import { IonicModule } from '@ionic/angular';
 
 import { MenuPage } from './menu.page';
@@ -22,6 +22,10 @@ const routes: Routes = [
       {
         path: 'secound',
         loadChildren: '../secound/secound.module#SecoundPageModule'
+         },
+         {
+           path: 'third',
+           loadChildren: '../third/third.module#ThirdPageModule'
          }
     ]
   },
@@ -35,7 +39,6 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    MbscModule,
     IonicModule,
     RouterModule.forChild(routes)
   ],

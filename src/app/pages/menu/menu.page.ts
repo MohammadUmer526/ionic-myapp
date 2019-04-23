@@ -16,6 +16,10 @@ export class MenuPage implements OnInit {
     {
       title: 'Stages',
       url : '../menu/secound'
+    },
+    {
+      title: 'Expand',
+      url: '../menu/third'
     }
   ];
 

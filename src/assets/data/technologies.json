@@ -1,0 +1,70 @@
+{
+   "technologies": [
+      {
+         "id": "2",
+         "stage": "Project Initiation",
+         "role": "Project Management",
+         "stages_code": "ProjectInitiation"
+      },
+      {
+         "id": "3",
+         "stage": "Project Planning",
+         "role": "Project Management",
+         "stages_code": "ProjectPlannining"
+      },
+      {
+         "id": "4",
+         "stage": "Project Monitoring",
+         "role": "Project Management",
+         "stages_code": "ProjectMotitoring"
+      },
+      {
+         "id": "5",
+         "stage": "Requirement Analysis",
+         "role": "Software-Engineering",
+         "stages_code": "RequirementAnalysis"
+      },
+      {
+         "id": "6",
+         "stage": "Change Management",
+         "role": "Software-Engineering",
+         "stages_code": "ChangeManagement"
+      },
+      {
+         "id": "7",
+         "stage": "Technical Design",
+         "role": "Software-Engineering",
+         "stages_code": "TechnicalDesign"
+      },
+      {
+         "id": "13",
+         "stage": "Code Writing",
+         "role": "Development",
+         "stages_code": "CodeWriting"
+      },
+      {
+         "id": "14",
+         "stage": "Unit Testing",
+         "role": "Development",
+         "stages_code": "UnitTesting"
+      },
+      {
+         "id": "15",
+         "stage": "Internal Release",
+         "role": "Development",
+         "stages_code": "InternalRelease"
+      },
+      {
+         "id": "16",
+         "stage": "Test Planning & Designing",
+         "role": "Quality Assurance",
+         "stages_code": "Test-Planning-Designing"
+      },
+      {
+         "id": "17",
+         "stage": "QA Acceptance & System Testing",
+         "role": "Quality Assurance",
+         "stages_code": "QA-Acceptance-System-Testing"
+      }
+   ]
+}

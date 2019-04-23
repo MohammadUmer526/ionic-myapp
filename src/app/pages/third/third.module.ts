@@ -4,14 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { SecoundPage } from './secound.page';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
+import { ThirdPage } from './third.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: SecoundPage
+    component: ThirdPage
   }
 ];
 
@@ -20,11 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    NgxDatatableModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [SecoundPage]
+  declarations: [ThirdPage]
 })
-export class SecoundPageModule { 
- 
-}
+export class ThirdPageModule {}

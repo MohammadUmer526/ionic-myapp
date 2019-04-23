@@ -32,7 +32,7 @@
                     Password is required
                   </div>
                   <div *ngIf="logInForm.get('password').errors.minlength">
-                    Password must be at least 8 characters long.
+                    Min length is 8
                   </div>
                   <div *ngIf="logInForm.get('password').errors.pattern">
                       Password Must contains the one number, one lowercase and one uppercase letter

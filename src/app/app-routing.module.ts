@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'first', loadChildren: './pages/first/first.module#FirstPageModule' },
   { path: 'secound', loadChildren: './pages/secound/secound.module#SecoundPageModule' },
+  { path: 'third', loadChildren: './pages/third/third.module#ThirdPageModule' },
 ];
 
 @NgModule({
